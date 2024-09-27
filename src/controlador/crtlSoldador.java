@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package controlador;
 
 import java.awt.event.MouseAdapter;
@@ -53,14 +49,18 @@ public class crtlSoldador extends MouseAdapter {
         }
         
         if (e.getSource() == vista.btnEditar) {
-            modelo.setNombre(vista.txtNombreS.getText());
-            modelo.setEdad(Integer.parseInt(vista.txtEdadS.getText()));
-            modelo.setPeso(Integer.parseInt(vista.txtPesoS.getText()));
-            modelo.setCorreo(vista.txtCorreoS.getText());
+    int filaSeleccionada = vista.tbSoladores.getSelectedRow();
+    if (filaSeleccionada != -1) { // Verifica si hay una fila seleccionada
+        modelo.setNombre(vista.txtNombreS.getText());
+        modelo.setEdad(Integer.parseInt(vista.txtEdadS.getText()));
+        modelo.setPeso(Integer.parseInt(vista.txtPesoS.getText()));
+        modelo.setCorreo(vista.txtCorreoS.getText());
 
-            modelo.MostrarBar(vista.tbSoladores);
-            modelo.ActualizarBar(vista.tbSoladores);
-        }
+        modelo.ActualizarBar(vista.tbSoladores);
+        modelo.MostrarBar(vista.tbSoladores); // Actualiza la tabla después de editar
+    }
+}
+
     }
 
     // Métodos no utilizados de MouseListener (puedes dejarlos vacíos)

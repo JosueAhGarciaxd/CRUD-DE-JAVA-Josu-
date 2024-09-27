@@ -135,7 +135,7 @@ public class soldador {
         
         //borramos 
         try {
-            PreparedStatement deleteEstudiante = conexion.prepareStatement("delete from tbBarbero where UUID_Soldador = ?");
+            PreparedStatement deleteEstudiante = conexion.prepareStatement("delete from tbSoldador where UUID_Soldador = ?");
             deleteEstudiante.setString(1, miId);
             deleteEstudiante.executeUpdate();
         } catch (Exception e) {
@@ -190,8 +190,6 @@ public class soldador {
             } catch (Exception e) {
                 System.out.println("este es el error en el metodo de actualizar" + e);
             }
-        } else {
-            System.out.println("no");
         }
     }
         

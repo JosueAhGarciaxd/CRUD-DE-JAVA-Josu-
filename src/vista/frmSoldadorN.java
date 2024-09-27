@@ -26,6 +26,7 @@ public class frmSoldadorN extends javax.swing.JFrame {
         soldador modelo = new soldador();
         crtlSoldador controlador = new crtlSoldador(vista, modelo);
         
+        vista.setVisible(true);
     }
 
     /**
